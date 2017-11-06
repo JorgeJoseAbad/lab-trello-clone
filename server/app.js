@@ -21,6 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Mongoose configuration
 mongoose.connect(process.env.MONGODB_URI);
+console.log("connecting to mongo: ");
+//mongoose.connect('mongodb://localhost/irontrello');
+mongoose.Promise = global.Promise;
+//assert.equal(query.exec().constructor, global.Promise);
 
 app.set('view engine', 'jade');
 

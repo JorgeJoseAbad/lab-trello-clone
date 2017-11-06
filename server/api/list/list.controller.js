@@ -8,7 +8,7 @@ exports.getLists = function(req, res, next) {
 	 	if (err) {
 	 		return res.json(err);
 	 	}
-         
+
         return new Promise((resolve, reject) => {
             listModel.populate(lists, 'cards')
                 .then((_lists) => {
@@ -29,7 +29,7 @@ exports.createList = function(req, res, next) {
 	});
 
 	Q.nfcall(item.save.bind(item))
-        .then(function () { 
+        .then(function () {
             res.json({
                 _id: item._id,
                 title: item.title,
@@ -51,7 +51,7 @@ exports.editList = function(req, res, next) {
                 list.save(function(err) {
                     if (err) {
                         res.json({ message: 'impossible to update the list', error: err });
-                    };
+                    }
                     res.json({ message: 'list successfully updated', list });
                 });
             } else {

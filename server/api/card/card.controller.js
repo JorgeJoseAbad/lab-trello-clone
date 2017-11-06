@@ -20,7 +20,7 @@ exports.createCard = function(req, res, next) {
 
 		// Update the corresponding list
 		listModel.update(
-			{ _id: card.list }, 
+			{ _id: card.list },
 			{ $push: { cards: card._id } },
 			function() {
 				return res.send(card);
@@ -59,10 +59,10 @@ exports.transferCard = function(req, res ,next) {
 				listModel.findByIdAndUpdate({ _id: targetList }, { $push: { cards: cardId }}).exec()
 			]).then(
 				(list) => {
-					return res.json({ message: 'card successfully updated', list: list })
+					return res.json({ message: 'card successfully updated', list: list });
 				},
 				(err) => {
-					return res.status(400).json({ message: 'unable to update refs', error: err })
+					return res.status(400).json({ message: 'unable to update refs', error: err });
 				}
 			);
 
@@ -74,7 +74,7 @@ exports.removeCard = function (req, res) {
         .findByIdAndRemove(req.params.id, function(err) {
             if (err) {
                 res.json({ message: 'impossible to remove the card', error: err });
-            };
+            }
 
             res.json({ message: 'card removed successfully' });
         });
