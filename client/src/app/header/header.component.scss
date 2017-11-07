@@ -5,7 +5,14 @@
         color: white;
     }
 
+    .navbar-brand{
+      float: left;
+      width: 60px;
+    }
+
     .text{
-      color:white;
+      text-align: right;
+      color:#f7f7f7;
+      font-size: 10px;
     }
 }

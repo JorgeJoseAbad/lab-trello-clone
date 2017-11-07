@@ -8,10 +8,10 @@
     .board-title-container {
         height: 50px;
         padding: 10px 5px;
-        
+
         h4.board-title {
             color: $white;
-            font-weight: 600;
+            font-weight: 400;
         }
     }
 
@@ -64,7 +64,7 @@
             .item-input {
                 font-size: 1.1rem;
                 background-color: $trello-primary-color-dark;
-                color: $white;        
+                color: $white;
                 border: none;
 
                 &:focus {
@@ -74,7 +74,7 @@
                     outline: 0 none;
                 }
             }
-            
+
             .item-controls {
                 a {
                     color: $trello-secondary-color-dark;

@@ -18,7 +18,7 @@ exports.createCard = function(req, res, next) {
 			return res.send(500);
 		}
 
-		// Update the corresponding list
+		// Update the corresponding list including the id of new card
 		listModel.update(
 			{ _id: card.list },
 			{ $push: { cards: card._id } },

@@ -59,7 +59,7 @@ export class ModalComponent implements OnInit {
         (response) => {
           this.editingDescription = false;
           this.editingDate = false;
-          this.onSuccess(response.message)
+          this.onSuccess(response.message);
         },
         (err) => this.onError(err.message)
       );
